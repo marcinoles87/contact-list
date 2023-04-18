@@ -1,4 +1,5 @@
 import React from "react";
+import './contactcard.css'
 
 const ContactCard = () => {
     return(
@@ -6,7 +7,7 @@ const ContactCard = () => {
             <img src='https://via.placeholder.com/150' alt='profil-img'></img>
 
         <div className='user-details'>
-            <h1>user name</h1>
+            <h1>user name : </h1>
             <p>user Info</p>
             <p>job : </p>
             <button>User Age</button>
