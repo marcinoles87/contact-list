@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import './contactcard.css'
 
 const ContactCard = () => {
+
+const [age , showAge ] = useState('')
+
     return(
         <div className='contact-card'>
             <img src='https://via.placeholder.com/150' alt='profil-img'></img>
