@@ -3,7 +3,16 @@ import './contactcard.css'
 
 const ContactCard = () => {
 
-const [age , showAge ] = useState('')
+const [showAge , setShowAge ] = useState(false)
+
+ const handleOnClick = () => {
+
+    setShowAge(
+        !showAge
+    )
+
+    console.log(showAge)
+}
 
     return(
         <div className='contact-card'>
@@ -13,7 +22,8 @@ const [age , showAge ] = useState('')
             <h1>user name : </h1>
             <p>user Info</p>
             <p>job : </p>
-            <button>User Age</button>
+            <button onClick={handleOnClick}>User Age</button>
+            {showAge ? <p>Age :25 : </p> : null}
         </div>
         </div>
     )
