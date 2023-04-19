@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './contactcard.css'
 
-const ContactCard = () => {
+const ContactCard = (props) => {
 
 const [showAge , setShowAge ] = useState(false)
 
@@ -16,14 +16,14 @@ const [showAge , setShowAge ] = useState(false)
 
     return(
         <div className='contact-card'>
-            <img src='https://via.placeholder.com/150' alt='profil-img'></img>
+            <img src={props.avatarURL} alt='profil-img'></img>
 
         <div className='user-details'>
-            <h1>user name : </h1>
-            <p>user Info</p>
-            <p>job : </p>
+            <h1>user name :{props.name} </h1>
+            <p>user Info {props.email}</p>
+            <p>job : {props.job} </p>
             <button onClick={handleOnClick}>User Age</button>
-            {showAge ? <p>Age :25 : </p> : null}
+            {showAge ? <p>Age :{props.age}</p> : null}
         </div>
         </div>
     )
