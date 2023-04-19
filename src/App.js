@@ -7,6 +7,10 @@ import ContactCard from './components/ContactCard';
 
 const App = () => {
 
+    fetch('https://randomuser.me/api/')
+    .then(response => response.json())
+    .then(data => console.log(data))
+
     return(
         <div className='app'>
         <ContactCard 
