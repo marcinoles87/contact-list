@@ -7,18 +7,18 @@ import ContactCard from './components/ContactCard';
 
 const App = () => {
 
-    const [contacts , setContacts] = useState([])
+    let [contacts , setContacts] = useState([])
 
     fetch('https://randomuser.me/api/?results=5')
     .then(response => response.json())
     .then(data => {
-        
-        setContacts(data) 
+        console.log(data.results)
+        setContacts(data.results) 
     
         console.log(data.contacts)
     })
 
-        
+        console.log(contacts)
     return(
 
         <div className='app'>
@@ -29,7 +29,7 @@ const App = () => {
         avatarURL = {contact.picture.large}
         name = {contact.first}
         email = {contact.email}
-        age = {contact.dob.age} />
+        age = {contact.dob.age} ></ContactCard>
             )
 
          } )}
