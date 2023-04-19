@@ -22,8 +22,8 @@ const [showAge , setShowAge ] = useState(false)
 
         <div className='user-details'>
             <h1>user name :{props.name} </h1>
-            <p>user Info {props.email}</p>
-            <p>job : {props.job} </p>
+            <p>user email : {props.email}</p>
+            <p>username: {props.username} </p>
             <button onClick={handleOnClick}>User Age</button>
             {showAge ? <p>Age :{props.age}</p> : null}
         </div>

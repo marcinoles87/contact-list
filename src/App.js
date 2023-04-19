@@ -2,34 +2,41 @@
 import './App.css';
 
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ContactCard from './components/ContactCard';
 
 const App = () => {
 
     let [contacts , setContacts] = useState([])
 
-    fetch('https://randomuser.me/api/?results=5')
+    
+    useEffect(() => {
+         fetch('https://randomuser.me/api/?results=5')
     .then(response => response.json())
     .then(data => {
         console.log(data.results)
         setContacts(data.results) 
     
-        console.log(data.contacts)
     })
-
-        console.log(contacts)
+    },[])
+   
+    
+        
     return(
 
         <div className='app'>
+
+            <h1>Contact Form React</h1>
 
         {contacts.map( (contact,index) => {
          return (
         <ContactCard  key = {index}
         avatarURL = {contact.picture.large}
-        name = {contact.first}
+        name = {contact.name.first}
         email = {contact.email}
-        age = {contact.dob.age} ></ContactCard>
+        age = {contact.dob.age} 
+        login = {contact.login.username}>
+        </ContactCard>
             )
 
          } )}
