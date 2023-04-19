@@ -2,34 +2,36 @@
 import './App.css';
 
 
-import React from 'react'
+import React, { useState } from 'react'
 import ContactCard from './components/ContactCard';
 
 const App = () => {
 
-    fetch('https://randomuser.me/api/')
+    const [contacts , setContacts] = useState([])
+
+    fetch('https://randomuser.me/api/?results=5')
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        console.log(data)})
+
+        setContacts = (data) => {
+
+        }
+
+    
 
     return(
+
         <div className='app'>
-        <ContactCard 
-        avatarURL = 'https://via.placeholder.com/150'
-        name = 'jon doe'
-        email = 'arex@gmail.com'
-        age = {30}  />
 
+        {contacts.map( (contact , index) => {
         <ContactCard 
-        avatarURL = 'https://via.placeholder.com/150'
-        name = 'jenny feis'
-        email = 'shis@gmail.com'
-        age = {3}  />
+        avatarURL = {contact.picture}
+        name = {contact.name}
+        email = {contact.email}
+        age = {contact.age} />
 
-        <ContactCard 
-        avatarURL = 'https://via.placeholder.com/150'
-        name = 'jo anna'
-        email = 'aelia@gmail.com'
-        age = {120}  />
+         } )}
 
 
         </div>
