@@ -3,6 +3,8 @@ import './contactcard.css'
 
 const ContactCard = (props) => {
 
+    console.log(props)
+
 const [showAge , setShowAge ] = useState(false)
 
  const handleOnClick = () => {
